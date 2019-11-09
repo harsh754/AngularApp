@@ -1,0 +1,43 @@
+<h1>hello harsh {{title}}</h1>
+<div *ngIf="checkngif">This is ng if example</div>
+
+
+
+<h2>Using  the switch</h2>
+<select (change)="setvalue($event)">
+    <option value="">--Select--</option>
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+    <option value="another">Another</option>
+</select>
+<div [ngSwitch]="choose">
+    <h3 *ngSwitchCase="'one'">First</h3>
+    <h3 *ngSwitchCase="'two'">Second</h3>
+    <h3 *ngSwitchCase="'three'">Third</h3>
+    <h3 *ngSwitchDefault>Default</h3>
+</div>
+<button (click)="btnclick()">click Me</button>
+<p [ngStyle]="{'color':'red','font-weight':'bold'}">This is ng style example</p>
+
+<input type="radio" name="radio1" (click)="changevalue(true)">True
+<input type="radio" name="radio1" (click)="changevalue(False)">False
+
+<div *ngIf="isvalid; then thenblock; else elseblock"></div>
+
+    <ng-template #thenblock>
+        <div>This is valid data -then block</div>
+    </ng-template>
+
+    This is a valid data
+<ng-template #elseblock>
+    <div>
+        This is not valid Using elseblock 
+    </div>
+</ng-template>
+<h1>Using ngFor</h1>
+<ul>
+    <li *ngFor="let student of Students; let i=index; let f=first; let l=last">
+        {{i+1}} - {{student.name}} - {{f}} - {{l}}
+    </li>
+</ul>
